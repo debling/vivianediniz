@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  type?: 'primary' | 'secondary';
+}
+
+const { title, type = 'secondary' } = Astro.props;
+
+let color = '';
+if (type === 'primary') {
+  color = 'bg-green-300 text-black';
+} else {
+  color = 'bg-purple-300 text-white';
+}
+---
+<button class={`subtitle-font rounded-xl font-bold py-2 px-4 mx-2 ${color}`}>
+  {title}
+</button>
+

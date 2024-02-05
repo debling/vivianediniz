@@ -5,6 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://debling.github.io',
+  base: '/vivianediniz',
   integrations: [tailwind(), sitemap()]
 });

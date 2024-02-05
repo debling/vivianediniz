@@ -1,4 +1,8 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
+// background: url(/background.svg) no-repeat fixed center;
+
 interface Props {
   title: string;
 }
@@ -14,38 +18,65 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <slot />
   </body>
 </html>
+
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
+:root {
+  --background-light: #fafdfa;
+  --button-secondary: #aa88e0;
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
     );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
+}
+html {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  background: var(--background-light);
+  background-size: 224px;
+  margin: 10px;
+}
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+
+.title-font {
+  font-family: "Cralika", serif;
+}
+
+.subtitle-font {
+  font-family: "Nunito", sans-serif;
+}
+
+@font-face {
+  font-family: "Cralika";
+  src: url("/fonts/Cralika.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 </style>

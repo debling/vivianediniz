@@ -1,9 +1,44 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+
+import redDress from "../img/red_dress.png";
+import cartao from "../img/cartao.png";
+import casa from "../img/casa.png";
 ---
 
 <Layout title="Portifolio | Viviane">
-  <main>
-    <h1 class="text-red-600">Welcome to Astro</h1>
+  <NavBar />
+  <main class="flex h-screen w-screen flex-1 items-center justify-center">
+    <div class="flex mr-32">
+      <div class="mr-5 bg-red-200">
+        <Image class="rounded-img" src={redDress} width="213" height="372" alt="Vestido vermelho" />
+      </div>
+
+      <div class="flex flex-col justify-between">
+        <div>
+          <Image class="rounded-img" src={casa} width="218" height="176" alt="Vestido vermelho" />
+        </div>
+
+        <div>
+          <Image class="rounded-img" src={cartao} width="218" height="176" alt="Vestido vermelho" />
+        </div>
+      </div>
+    </div>
+
+  <div class="flex-row items-center">
+    <h4 class="text-center subtitle-font font-semibold text-[20px]">GRAPHIC DESIGNER AND 3D ARTIST</h4>
+
+    <h1 class="text-center title-font text-[75px]">VIVIANE DINIZ</h1>
+  </div>
+
   </main>
 </Layout>
+
+<style>
+  .rounded-img {
+    border-radius: 10px;
+  }
+</style>
