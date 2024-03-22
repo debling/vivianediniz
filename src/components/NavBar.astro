@@ -5,12 +5,12 @@ import Button from "./Button.astro";
 const base = '/vivianediniz';
 
 const navItems = [
-  { label: "HOME", href: base + "/" },
+  { label: "HOME", href: base},
   { label: "ABOUT", href: base + "/about" },
   { label: "WORKS", href: base + "/works" },
 ] as const;
 
-const currentPath = new URL(Astro.request.url).pathname
+const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 
 function activeCLass(item: (typeof navItems)[number]): string {
   return item.href === `${currentPath}` ? "underline" : "";
