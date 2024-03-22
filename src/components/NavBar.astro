@@ -2,13 +2,19 @@
 import { Icon } from "astro-icon/components";
 import Button from "./Button.astro";
 
+const base = '/vivianediniz';
 
-// const navItems = [
-// 	{ label: 'HOME', href: '/' },
-// 	{ label: 'ABOUT', href: '/about/' },
-// 	{ label: 'WORKS', href: '/works/' },
-// 	{ label: 'CONTACT', href: '/contact/' },
-// ] as const;
+const navItems = [
+  { label: "HOME", href: base + "/" },
+  { label: "ABOUT", href: base + "/about" },
+  { label: "WORKS", href: base + "/works" },
+] as const;
+
+const currentPath = new URL(Astro.request.url).pathname
+
+function activeCLass(item: (typeof navItems)[number]): string {
+  return item.href === `${currentPath}` ? "underline" : "";
+}
 
 ---
 
@@ -16,18 +22,37 @@ import Button from "./Button.astro";
   <nav class="flex items-center justify-between">
     <div></div>
     <div>
-      <Button type="primary" title="HOME" />
-      <Button title="ABOUT" />
-      <Button title="WORKS" />
-      <Button title="CONTACT" />
+      {
+        navItems.map((item) => (
+          <a href={item.href}>
+	    <Button title={item.label} class={activeCLass(item)} />
+          </a>
+        ))
+      }
     </div>
-    <div class="flex justify-between bg-purple-300 py-2 px-4 rounded-l-full">
-      <a href="https://www.behance.net/vivianedn" target="_blank">
-	<Icon name="social/behance" class="text-xl mr-2"/>
+    <div class="flex justify-between rounded-l-lg bg-purple-300 p-2">
+      <a
+        href="https://www.behance.net/vivianedn"
+        aria-label="Link to Viviane's Behance page"
+        target="_blank"
+      >
+        <Icon name="social/behance" class="mr-2 text-xl" />
       </a>
 
-      <a href="https://www.instagram.com/viviane.dzn" target="_blank">
-      <Icon name="social/ig" class="text-xl" />
+      <a
+        href="https://www.instagram.com/viviane.dzn"
+        aria-label="Link to Viviane's instagram page"
+        target="_blank"
+      >
+        <Icon name="social/ig" class="mr-2 text-xl" />
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/viviane-diniz-118565286"
+        aria-label="Link to Viviane's Linkedin page"
+        target="_blank"
+      >
+        <Icon name="social/linkedin" class="text-xl" />
       </a>
     </div>
   </nav>
