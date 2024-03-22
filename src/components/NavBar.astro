@@ -11,13 +11,13 @@ const navItems = [
 const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 
 function activeCLass(item: (typeof navItems)[number]): string {
-  return item.href === `${currentPath}` ? "underline" : "";
+  return item.href.replace(/\/$/, "") === `${currentPath}` ? "underline" : "";
 }
 
 ---
 
 <header>
-  <nav class="flex items-center justify-between">
+  <nav class="flex items-center justify-between pt-4">
     <div></div>
     <div>
       {
