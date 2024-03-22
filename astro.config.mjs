@@ -6,7 +6,6 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://debling.github.io',
-  base: '/vivianediniz',
+  site: 'https://vivianediniz.com',
   integrations: [tailwind(), sitemap(), icon()]
 });
