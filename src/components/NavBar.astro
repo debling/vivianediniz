@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import Button from "./Button.astro";
 
 const navItems = [
   { label: "HOME", href: '/'},
@@ -11,7 +10,7 @@ const navItems = [
 const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 
 function activeCLass(item: (typeof navItems)[number]): string {
-  return item.href.replace(/\/$/, "") === `${currentPath}` ? "underline" : "";
+  return item.href.replace(/\/$/, "") === `${currentPath}` ? "backdrop-blur-sm border border-white/10  bg-white/30 " : "";
 }
 
 ---
@@ -22,11 +21,18 @@ function activeCLass(item: (typeof navItems)[number]): string {
     <div>
       {
         navItems.map((item) => (
-          <a href={item.href}>
-	    <Button title={item.label} class={activeCLass(item)} />
+
+          <a class=`rounded-xl py-2 px-4 mx-2  group text-black subtitle-font
+            font-bold transition-all duration-300 ease-in-out
+            ${activeCLass(item)}`
+            href={item.href}>
+            <span class="bg-left-bottom bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+              {item.label}
+            </span>
           </a>
         ))
       }
+
     </div>
     <div class="flex justify-between rounded-l-lg bg-purple-300 p-2">
       <a
