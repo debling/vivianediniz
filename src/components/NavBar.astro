@@ -3,14 +3,18 @@ import { Icon } from "astro-icon/components";
 
 const navItems = [
   { label: "HOME", href: '/'},
-  // { label: "ABOUT", href: "/about" },
+  { label: "ABOUT", href: "/about" },
   { label: "WORKS", href: "/works" },
 ] as const;
 
 const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 
 function activeCLass(item: (typeof navItems)[number]): string {
-  return item.href.replace(/\/$/, "") === `${currentPath}` ? "backdrop-blur-sm border border-white/10  bg-white/30 " : "";
+  const itemPath = item.href.replace(/\/$/, "");
+  console.log(itemPath, currentPath, itemPath === currentPath);
+  return itemPath === currentPath 
+    ? "backdrop-blur-sm border border-white/10 bg-emerald-200/40" 
+    : "";
 }
 
 ---
