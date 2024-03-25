@@ -11,7 +11,6 @@ const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 
 function activeCLass(item: (typeof navItems)[number]): string {
   const itemPath = item.href.replace(/\/$/, "");
-  console.log(itemPath, currentPath, itemPath === currentPath);
   return itemPath === currentPath 
     ? "backdrop-blur-sm border border-white/10 bg-emerald-200/40" 
     : "";
@@ -30,7 +29,7 @@ function activeCLass(item: (typeof navItems)[number]): string {
             font-bold transition-all duration-300 ease-in-out
             ${activeCLass(item)}`
             href={item.href}>
-            <span class="bg-left-bottom bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+            <span class="font-nav bg-left-bottom bg-gradient-to-r from-black to-black bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
               {item.label}
             </span>
           </a>
@@ -38,7 +37,7 @@ function activeCLass(item: (typeof navItems)[number]): string {
       }
 
     </div>
-    <div class="flex justify-between rounded-l-lg bg-purple-300 p-2">
+    <div class="flex justify-between rounded-l-lg bg-purple-primary p-2">
       <a
         href="https://www.behance.net/vivianedn"
         aria-label="Link to Viviane's Behance page"
@@ -55,11 +54,9 @@ function activeCLass(item: (typeof navItems)[number]): string {
         <Icon name="social/ig" class="mr-2 text-xl" />
       </a>
 
-      <a
-        href="https://www.linkedin.com/in/viviane-diniz-118565286"
+      <a href="https://www.linkedin.com/in/viviane-diniz-118565286"
         aria-label="Link to Viviane's Linkedin page"
-        target="_blank"
-      >
+        target="_blank">
         <Icon name="social/linkedin" class="text-xl" />
       </a>
     </div>
