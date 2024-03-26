@@ -10,7 +10,7 @@ const { title } = Astro.props;
 const fonts = [
   "/fonts/nunito-latin-700-normal.woff2",
   "/fonts/nunito-latin-600-normal.woff2",
-  "/fonts/Cralika.woff2",
+  "/fonts/Cralika.woff",
   "/fonts/EudoxusSans-Bold.woff2",
 ] as const;
 ---
@@ -19,13 +19,13 @@ const fonts = [
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Viviane's portifolio" />
+    <meta name="description" content="I'm a young Brazilian designer and 3D artist, passionate about transforming ideas into vibrant and engaging art. Each project in my portfolio reflects my dedication to bringing concepts to life through graphic design and 3D modeling, providing unique visual experiences. Let me present your story in a unique and special way." />
     <meta
       name="keywords"
       content="Designer, Web Designer, Graphic Designer, 3D Design, 3D Artist, Art"
     />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -36,15 +36,15 @@ const fonts = [
           rel="preload"
           href={font}
           as="font"
-          type="font/woff2"
+          type={`font/${font.endsWith(".woff2") ? "woff2" : "woff"}`}
           crossorigin
         />
       ))
     }
 
-    <!-- <meta -->
-    <!--   http-equiv="Content-Security-Policy" -->
-    <!--   content="default-src 'self'; img-src https://*; child-src 'none';" /> -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; child-src 'none';" />
 
     <title>{title}</title>
     <ViewTransitions />
@@ -132,7 +132,7 @@ const fonts = [
 
     @font-face {
       font-family: "Cralika";
-      src: url("/fonts/Cralika.woff2") format("woff2");
+      src: url("/fonts/Cralika.woff") format("woff");
       font-weight: normal;
       font-style: normal;
       font-display: swap;
