@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../../layouts/Layout.astro";
+import NavBar from "../../components/NavBar.astro";
+
+import aboutPic from "../../img/about_pic.png";
+
+import red_dress from "../../img/red_dress.png";
+---
+
+<Layout transition:animate="initial" title="Works: Please, I'm a Start! | Viviane">
+  <NavBar />
+  <main class="flex h-full items-center justify-center">
+
+    <article class="grid max-w-screen-2xl grid-cols-6 px-24">
+      <div class="col-span-2 mr-36">
+        <div class="mb-12">
+          <h1 class="font-serif text-3xl">PLEASE, I'M A STAR!</h1>
+
+          <div class="relative flex items-center">
+            <div class="h-1 flex-grow bg-green-primary"></div>
+            <div class="rounded-full bg-green-primary p-2"></div>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-pretty text-justify font-sans text-xl font-semibold">
+            In my study project on digital fashion with a Halloween theme, I sought
+            inspiration from the character Pearl from the film “Pearl – An
+            X-traordinary Story”.
+            <br />
+            <br />
+            The goal was to bring Pearl's eccentric essence into faithful and elegant
+            digital clothing, exploring the enchanting and mysterious side of
+            fashion for unique viewing.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-span-2 mr-16">
+        <div>
+          <h2 class="font-serif text-[25px]">INFORMATION</h2>
+
+          <div class="relative flex items-center">
+            <div class="h-0.5 flex-grow bg-purple-primary"></div>
+          </div>
+
+          <p class="font-sans text-[18px] mt-8">Project duration: <br /> 10 days </p>
+        </div>
+
+        <div class="mt-20">
+          <h2 class="font-serif text-[25px]">TOOLS</h2>
+
+          <div class="relative flex items-center">
+            <div class="h-0.5 flex-grow bg-purple-primary"></div>
+          </div>
+
+          <p class="font-sans text-[18px] mt-8">
+            Clo3D
+            <br /> Cinema 4D
+            <br /> Adobe Substance Painter
+            <br /> Unreal Engine 5
+          </p>
+        </div>
+      </div>
+
+      <div class="col-span-2">
+        <Image transition:name="please-im-a-star"
+          class="rounded-xl object-cover shadow-2xl"
+          src={red_dress}
+          width="405"
+          height="546"
+          alt="Viviane Diniz's picture"
+          loading="lazy"
+        />
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .rounded-img {
+    border-radius: 10px;
+  }
+</style>

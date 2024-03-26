@@ -27,41 +27,53 @@ font-semibold leading-4`;
 
   <section class="flex  items-center justify-center">
     <div class="flex mr-5">
-      <div class="mr-5 relative scale-on-hover">
-        <Image class=" rounded-lg  h-full" src={redDress} width="213" height="372" alt="Vestido vermelho" loading="eager" />
-        <div class={titleStyle}> Please, I'm a Star </div>
-      </div>
+        <a href="/works/please-im-a-star">
+          <div class="mr-5 relative scale-on-hover">
+            <Image transition:name="please-im-a-star" class=" rounded-lg  h-full" src={redDress} width="213" height="372" alt="Vestido vermelho" loading="eager" />
+            <div class={titleStyle}> Please, I'm a Star </div>
+          </div>
+        </a>
 
       <div class="flex flex-col justify-between">
+        <a href="/works/the-coffe">
         <div class="relative scale-on-hover">
-          <Image class="rounded-lg" src={casa} width="218" height="176" alt="Vestido vermelho" loading="eager" />
+          <Image transition:name="the-coffe"  class="rounded-lg" src={casa} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>The Coffe</div>
         </div>
+        </a>
 
+        <a href="/works/lots-of-love">
         <div class="relative scale-on-hover">
-          <Image class="rounded-lg" src={cartao} width="218" height="176" alt="Vestido vermelho" loading="eager" />
+          <Image transition:name="lots-of-love" class="rounded-lg" src={cartao} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>Lots of Love</div>
         </div>
+        </a>
       </div>
     </div>
 
 
     <div class="flex">
+      <a href="/works/blue-star">
       <div class="mr-5 relative scale-on-hover">
-        <Image class="rounded-lg" src={blueStar} width="213" height="372" alt="Vestido vermelho" loading="eager" />
+        <Image transition:name="blue-star" class="rounded-lg" src={blueStar} width="213" height="372" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>Blue Star</div>
       </div>
+      </a>
 
       <div class="flex flex-col justify-between">
+      <a href="/works/estrella">
         <div class="relative scale-on-hover">
-          <Image class="rounded-lg" src={estrela} width="218" height="176" alt="Vestido vermelho" loading="eager" />
+          <Image transition:name="estrella" class="rounded-lg" src={estrela} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>Estrella</div>
         </div>
+      </a>
 
+      <a href="/works/a-bathroom">
         <div class="relative scale-on-hover">
-          <Image class="rounded-lg" src={bathroom} width="218" height="176" alt="Vestido vermelho" loading="eager" />
+          <Image transition:name="a-bathroom" class="rounded-lg" src={bathroom} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>A Bathroom</div>
         </div>
+      </a>
       </div>
     </div>
 </section>
