@@ -1,15 +1,15 @@
 ---
 import { Image } from "astro:assets";
 
-import Layout from "../layouts/Layout.astro";
-import NavBar from "../components/NavBar.astro";
+import Layout from "../../layouts/Layout.astro";
+import NavBar from "../../components/NavBar.astro";
 
-import aboutPic from "../img/about_pic.png";
+import aboutPic from "../../img/about_pic.png";
 
-import unreal from "../img/skills/unreal.png";
-import figma from "../img/skills/figma.png";
-import blender from "../img/skills/blender.png";
-import ab_illustrator from "../img/skills/ab_illustrator.png";
+import unreal from "../../img/skills/unreal.png";
+import figma from "../../img/skills/figma.png";
+import blender from "../../img/skills/blender.png";
+import ab_illustrator from "../../img/skills/ab_illustrator.png";
 
 const skills = [
   {
@@ -31,7 +31,7 @@ const skills = [
 ] as const;
 ---
 
-<Layout title="Sobre | Viviane">
+<Layout title="About | Viviane">
   <NavBar />
   <main class="flex h-full items-center justify-center">
     <div class="grid max-w-screen-xl grid-cols-6 px-24">
@@ -59,13 +59,12 @@ const skills = [
         <div>
           <p class="font-sans text-xl font-semibold	text-justify
             text-pretty">
-Sou um jovem designer e artista 3D brasileiro, apaixonado por transformar
-            ideias em arte vibrante e envolvente. Cada projeto do meu portfólio
-            reflete minha dedicação em dar vida a conceitos por meio do design
-            gráfico e da modelagem 3D, proporcionando experiências visuais
-            únicas.
- <br />
-Deixe-me apresentar sua história de uma forma única e especial.
+            I'm a young Brazilian designer and 3D artist, passionate about
+            transforming ideas into vibrant and engaging art. Each project in my
+            portfolio reflects my dedication to bringing concepts to life
+            through graphic design and 3D modeling, providing unique visual
+            experiences. <br />
+            Let me present your story in a unique and special way.
           </p>
         </div>
 

@@ -1,11 +1,32 @@
 ---
 import { Icon } from "astro-icon/components";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const locale = Astro.currentLocale!;
+
+const labels = {
+  "en": {
+    "HOME": "HOME",
+    "ABOUT": "ABOUT",
+    "WORKS": "WORKS",
+  },
+  "pt-br": {
+    "HOME": "INÍCIO",
+    "ABOUT": "SOBRE",
+    "WORKS": "PROJETOS",
+  }
+} as const;
 
 const navItems = [
   { label: "HOME", href: '/'},
   { label: "ABOUT", href: "/about" },
   { label: "WORKS", href: "/works" },
-] as const;
+].map(i => {
+  i.label = labels[locale as keyof typeof labels][i.label as keyof typeof labels["en"]];
+  i.href = getRelativeLocaleUrl(locale, i.href)
+  return i;
+});
+
 
 const currentPath = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 
@@ -42,23 +63,32 @@ function activeCLass(item: (typeof navItems)[number]): string {
         href="https://www.behance.net/vivianedn"
         aria-label="Link to Viviane's Behance page"
         target="_blank"
+        title="Behance"
       >
-        <Icon name="social/behance" class="mr-2 text-xl" />
+        <Icon name="social/behance" class="mr-2 text-xl scale-on-hover" />
       </a>
 
       <a
         href="https://www.instagram.com/viviane.dzn"
         aria-label="Link to Viviane's instagram page"
         target="_blank"
+        title="Instagram"
       >
-        <Icon name="social/ig" class="mr-2 text-xl" />
+        <Icon name="social/ig" class="mr-2 text-xl scale-on-hover" />
       </a>
 
       <a href="https://www.linkedin.com/in/viviane-diniz-118565286"
+        title="Linkedin"
         aria-label="Link to Viviane's Linkedin page"
         target="_blank">
-        <Icon name="social/linkedin" class="text-xl" />
+        <Icon name="social/linkedin" class="text-xl scale-on-hover" />
       </a>
     </div>
   </nav>
 </header>
+
+
+<style>
+.scale-on-hover { transition: all .3s ease-in-out; }
+.scale-on-hover:hover { transform: scale(1.3); }
+</style>

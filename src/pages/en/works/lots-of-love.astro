@@ -1,20 +1,20 @@
 ---
 import { Image } from "astro:assets";
 
-import Layout from "../../layouts/Layout.astro";
-import NavBar from "../../components/NavBar.astro";
+import Layout from "../../../layouts/Layout.astro";
+import NavBar from "../../../components/NavBar.astro";
 
-import red_dress from "../../img/estrela.png";
+import red_dress from "../../../img/cartao.png";
 ---
 
-<Layout title="Projetos: Estrella | Viviane">
+<Layout title="Works: Lots of Love | Viviane">
   <NavBar />
   <main transition:animate="initial" class="flex h-full items-center justify-center">
 
     <article class="grid max-w-screen-2xl grid-cols-6 px-24">
       <div class="col-span-2 mr-36">
         <div class="mb-12">
-          <h1 class="font-serif text-3xl">ESTRELLA</h1>
+          <h1 class="font-serif text-3xl">LOTS OF LOVE</h1>
 
           <div class="relative flex items-center">
             <div class="h-1 flex-grow bg-green-primary"></div>
@@ -24,28 +24,28 @@ import red_dress from "../../img/estrela.png";
 
         <div>
           <p class="text-pretty text-justify font-sans text-xl font-semibold">
-Projeto de estudo sobre identidade visual de uma marca de joias.
+Study project on the visual identity of a flower shop.
 
             <br />
             <br />
-Cada detalhe reflete a energia vibrante da juventude, entrelaçada com a elegância atemporal das nossas criações. Uma fusão única que transforma o simples no sublime, captando a essência radiante da juventude em cada peça aqui produzida.
+Here we explore the charm that blooms in every detail. We bring a visual atmosphere that celebrates flourishing beauty with a unique emotional touch and open the doors to our most flowery path, with lots of love!
           </p>
         </div>
       </div>
 
       <div class="col-span-2 mr-16">
         <div>
-          <h2 class="font-serif text-[25px]">INFORMAÇÃO</h2>
+          <h2 class="font-serif text-[25px]">INFORMATION</h2>
 
           <div class="relative flex items-center">
             <div class="h-0.5 flex-grow bg-purple-primary"></div>
           </div>
 
-          <p class="font-sans text-[18px] mt-8">Duração do Projeto: <br /> 2 dias </p>
+          <p class="font-sans text-[18px] mt-8">Project duration: <br /> 2 days </p>
         </div>
 
         <div class="mt-20">
-          <h2 class="font-serif text-[25px]">FERRAMENTAS</h2>
+          <h2 class="font-serif text-[25px]">TOOLS</h2>
 
           <div class="relative flex items-center">
             <div class="h-0.5 flex-grow bg-purple-primary"></div>
@@ -53,18 +53,19 @@ Cada detalhe reflete a energia vibrante da juventude, entrelaçada com a elegân
 
           <p class="font-sans text-[18px] mt-8">
 Adobe Photoshop
-            <br /> Adobe Illustrator
+            <br />
+Adobe Illustrator
           </p>
         </div>
       </div>
 
       <div class="col-span-2">
-        <Image transition:name="estrella"
+        <Image transition:name="lots-of-love"
           class="rounded-xl object-cover shadow-2xl"
           src={red_dress}
           width="405"
           height="546"
-          alt="Viviane Diniz's picture"
+          alt="Lots of Love"
           loading="lazy"
         />
       </div>

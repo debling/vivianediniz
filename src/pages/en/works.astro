@@ -1,33 +1,34 @@
 ---
 import { Image } from "astro:assets";
 
-import Layout from "../layouts/Layout.astro";
-import NavBar from "../components/NavBar.astro";
+import Layout from "../../layouts/Layout.astro";
+import NavBar from "../../components/NavBar.astro";
 
-import redDress from "../img/red_dress.png";
-import cartao from "../img/cartao.png";
-import casa from "../img/casa.png";
+import redDress from "../../img/red_dress.png";
+import cartao from "../../img/cartao.png";
+import casa from "../../img/casa.png";
 
 
-import blueStar from "../img/blue_star.png";
-import estrela from "../img/estrela.png";
-import bathroom from "../img/bathroom.png";
+import blueStar from "../../img/blue_star.png";
+import estrela from "../../img/estrela.png";
+import bathroom from "../../img/bathroom.png";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const titleStyle = `absolute rounded-b-lg  w-full px-2 py-3 bottom-0 inset-x-0
 bg-gradient-to-t from-black/80 from-20% via-70% text-white subtitle-font
 font-semibold leading-4`;
 ---
 
-<Layout title="Projetos | Viviane">
+<Layout title="Works | Viviane">
   <NavBar />
 
   <main class="flex flex-col h-full mt-10">
 
-  <h1 class="text-center title-font text-[64px] mt-24 my-10">Projetos</h1>
+  <h1 class="text-center title-font text-[64px] mt-24 my-10">Works</h1>
 
   <section class="flex  items-center justify-center">
     <div class="flex mr-5">
-        <a href="/works/please-im-a-star">
+        <a href={getRelativeLocaleUrl("en", "/works/please-im-a-star")}>
           <div class="mr-5 relative scale-on-hover">
             <Image transition:name="please-im-a-star" class=" rounded-lg  h-full" src={redDress} width="213" height="372" alt="Vestido vermelho" loading="eager" />
             <div class={titleStyle}> Please, I'm a Star </div>
@@ -35,14 +36,14 @@ font-semibold leading-4`;
         </a>
 
       <div class="flex flex-col justify-between">
-        <a href="/works/the-coffe">
+        <a href={getRelativeLocaleUrl("en", "/works/the-coffe")}>
         <div class="relative scale-on-hover">
           <Image transition:name="the-coffe"  class="rounded-lg" src={casa} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>The Coffe</div>
         </div>
         </a>
 
-        <a href="/works/lots-of-love">
+        <a href={getRelativeLocaleUrl("en", "/works/lots-of-love")}>
         <div class="relative scale-on-hover">
           <Image transition:name="lots-of-love" class="rounded-lg" src={cartao} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>Lots of Love</div>
@@ -53,7 +54,7 @@ font-semibold leading-4`;
 
 
     <div class="flex">
-      <a href="/works/blue-star">
+      <a href={getRelativeLocaleUrl("en", "/works/blue-star")}>
       <div class="mr-5 relative scale-on-hover">
         <Image transition:name="blue-star" class="rounded-lg" src={blueStar} width="213" height="372" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>Blue Star</div>
@@ -61,14 +62,14 @@ font-semibold leading-4`;
       </a>
 
       <div class="flex flex-col justify-between">
-      <a href="/works/estrella">
+      <a href={getRelativeLocaleUrl("en", "/works/estrella")}>
         <div class="relative scale-on-hover">
           <Image transition:name="estrella" class="rounded-lg" src={estrela} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>Estrella</div>
         </div>
       </a>
 
-      <a href="/works/a-bathroom">
+      <a href={getRelativeLocaleUrl("en", "/works/a-bathroom")}>
         <div class="relative scale-on-hover">
           <Image transition:name="a-bathroom" class="rounded-lg" src={bathroom} width="218" height="176" alt="Vestido vermelho" loading="eager" />
           <div class={titleStyle}>A Bathroom</div>
