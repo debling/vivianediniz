@@ -13,10 +13,12 @@ const fonts = [
   "/fonts/Cralika.woff",
   "/fonts/EudoxusSans-Bold.woff2",
 ] as const;
+
+const locale = Astro.currentLocale!;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale} dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="I'm a young Brazilian designer and 3D artist, passionate about transforming ideas into vibrant and engaging art. Each project in my portfolio reflects my dedication to bringing concepts to life through graphic design and 3D modeling, providing unique visual experiences. Let me present your story in a unique and special way." />
