@@ -15,6 +15,15 @@ const fonts = [
 ] as const;
 
 const locale = Astro.currentLocale!;
+
+const cspRules = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+  "connect-src www.google-analytics.com",
+  "img-src: www.googletagmanager.com",
+  "style-src 'self' 'unsafe-inline'",
+  "child-src 'none'"
+].join(';');
 ---
 
 <!doctype html>
@@ -49,7 +58,7 @@ const locale = Astro.currentLocale!;
 
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; img-src: www.googletagmanager.com; style-src 'self' 'unsafe-inline'; child-src 'none';"
+      content={cspRules}
     />
 
     <title>{title}</title>
