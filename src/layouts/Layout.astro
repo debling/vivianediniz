@@ -21,7 +21,10 @@ const locale = Astro.currentLocale!;
 <html lang={locale} dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Sou uma jovem designer e artista 3D brasileira, apaixonada por transformar ideias em artes vibrantes e envolventes. Cada projeto do meu portfólio reflete minha dedicação em dar vida a conceitos por meio do design gráfico e da modelagem tridimensional, proporcionando experiências visuais únicas." />
+    <meta
+      name="description"
+      content="Sou uma jovem designer e artista 3D brasileira, apaixonada por transformar ideias em artes vibrantes e envolventes. Cada projeto do meu portfólio reflete minha dedicação em dar vida a conceitos por meio do design gráfico e da modelagem tridimensional, proporcionando experiências visuais únicas."
+    />
     <meta
       name="keywords"
       content="Designer, Web Designer, Graphic Designer, 3D Design, 3D Artist, Art"
@@ -46,7 +49,8 @@ const locale = Astro.currentLocale!;
 
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; child-src 'none';" />
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; child-src 'none';"
+    />
 
     <title>{title}</title>
     <ViewTransitions />
@@ -148,4 +152,17 @@ const locale = Astro.currentLocale!;
       font-display: block;
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8X6TF93W3"
+  ></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-V8X6TF93W3");
+  </script>
 </html>
