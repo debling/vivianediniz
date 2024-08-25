@@ -11,7 +11,46 @@ import casa from "../img/casa.png";
 
 <Layout title="Portifolio | Viviane">
   <NavBar />
-  <main class="flex h-full items-center justify-center">
+
+  <main class="container mx-auto px-4 md:hidden">
+    <div class="flex-row items-center py-10">
+      <h1 class="title-font text-center text-5xl uppercase">Viviane Diniz</h1>
+      <h4 class="subtitle-font text-center font-semibold">
+        DESIGNER GRAFICO E ARTISTA 3D
+      </h4>
+    </div>
+
+    <div class="flex justify-between gap-4">
+      <div>
+        <Image
+          class="rounded-img"
+          src={casa}
+          alt="Vestido vermelho"
+          loading="eager"
+        />
+      </div>
+
+      <div>
+        <Image
+          class="rounded-img"
+          src={cartao}
+          alt="Vestido vermelho"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <div class="mt-5 flex w-full grow">
+      <Image
+        class="rounded-img w-full"
+        src={redDress}
+        alt="Vestido vermelho"
+        loading="eager"
+      />
+    </div>
+  </main>
+
+  <main class="hidden h-full items-center justify-center md:flex">
     <div class="mr-5 flex">
       <div class="mr-5 bg-red-200">
         <Image
@@ -54,7 +93,9 @@ import casa from "../img/casa.png";
         DESIGNER GRAFICO E ARTISTA 3D
       </h4>
 
-      <h1 class="title-font text-center text-[75px] uppercase">Viviane Diniz</h1>
+      <h1 class="title-font text-center text-[75px] uppercase">
+        Viviane Diniz
+      </h1>
     </div>
   </main>
 </Layout>

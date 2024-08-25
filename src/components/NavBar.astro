@@ -46,7 +46,7 @@ function activeCLass(item: (typeof navItems)[number]): string {
       {
         navItems.map((item) => (
 
-          <a class=`rounded-xl py-2 px-4 mx-2  group text-black subtitle-font
+          <a class=`rounded-xl py-2 px-2 md:mx-2 group text-black subtitle-font
             font-bold transition-all duration-300 ease-in-out
             ${activeCLass(item)}`
             href={item.href}>
