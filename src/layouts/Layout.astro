@@ -22,8 +22,8 @@ const cspRules = [
   "connect-src 'self' www.google-analytics.com",
   "img-src 'self' www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
-  "child-src 'none'"
-].join(';');
+  "child-src 'none'",
+].join(";");
 ---
 
 <!doctype html>
@@ -56,10 +56,7 @@ const cspRules = [
       ))
     }
 
-    <meta
-      http-equiv="Content-Security-Policy"
-      content={cspRules}
-    />
+    <meta http-equiv="Content-Security-Policy" content={cspRules} />
 
     <title>{title}</title>
     <ViewTransitions />
@@ -163,8 +160,10 @@ const cspRules = [
   </style>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8X6TF93W3"
-  ></script>
+  <script
+    is:inline
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-V8X6TF93W3"></script>
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
     function gtag() {

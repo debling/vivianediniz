@@ -33,39 +33,39 @@ const skills = [
 
 <Layout title="Sobre | Viviane">
   <NavBar />
-  <main class="flex h-full items-center justify-center">
-    <div class="grid max-w-screen-xl grid-cols-6 px-24">
-      <div class="col-span-2">
+  <main class="justify-center">
+    <div class="grid grid-cols-1 px-24 md:grid-cols-6 md:mt-20">
+      <div class="flex items-center justify-center md:col-span-2">
         <Image
-          class="h-full w-full object-cover rounded-xl shadow-2xl"
+          class="h-2/3 w-auto rounded-xl object-cover shadow-2xl md:h-auto"
           src={aboutPic}
-          width="385"
-          height="550"
           alt="Viviane Diniz's picture"
           loading="lazy"
         />
       </div>
 
-      <div class="col-span-4 ml-24">
+      <div class="md:col-span-4 md:ml-24">
         <div class="mb-12">
           <h1 class="font-serif text-[64px]">Viviane Diniz</h1>
 
           <div class="relative flex items-center">
-            <div class="flex-grow h-1 bg-green-primary"></div>
-            <div class="p-2 rounded-full bg-green-primary"></div>
+            <div class="h-1 flex-grow bg-green-primary"></div>
+            <div class="rounded-full bg-green-primary p-2"></div>
           </div>
         </div>
 
         <div>
-          <p class="font-sans text-xl font-semibold	text-justify
-            text-pretty">
-Sou uma jovem designer e artista 3D brasileira, apaixonada por transformar
-            ideias em artes vibrantes e envolventes. Cada projeto do meu portfólio
-            reflete minha dedicação em dar vida a conceitos por meio do design
-            gráfico e da modelagem tridimensional, proporcionando experiências visuais
-            únicas.
- <br />
-Deixe-me apresentar sua história de uma forma especial.
+          <p
+            class="text-pretty text-justify font-sans text-xl
+            font-semibold"
+          >
+            Sou uma jovem designer e artista 3D brasileira, apaixonada por
+            transformar ideias em artes vibrantes e envolventes. Cada projeto do
+            meu portfólio reflete minha dedicação em dar vida a conceitos por
+            meio do design gráfico e da modelagem tridimensional, proporcionando
+            experiências visuais únicas.
+            <br />
+            Deixe-me apresentar sua história de uma forma especial.
           </p>
         </div>
 
@@ -73,21 +73,28 @@ Deixe-me apresentar sua história de uma forma especial.
           <h2 class="font-serif text-[32px]">Skills</h2>
 
           <div class="relative flex items-center">
-            <div class="flex-grow h-0.5 bg-purple-primary"></div>
+            <div class="h-0.5 flex-grow bg-purple-primary"></div>
           </div>
         </div>
-        <div class="flex justify-between mt-11">
+        <div
+          class="mt-11 grid grid-cols-2 justify-between gap-4 xl:grid-cols-4"
+        >
           {
             skills.map((skill) => (
-              <div class="bg-purple-primary rounded-full flex items-center
-                shadow-2xl shadow-purple-primary">
-                <div class="bg-purple-secondary rounded-full p-3">
+              <div
+                class="flex items-center rounded-full bg-purple-primary
+                shadow-2xl shadow-purple-primary"
+              >
+                <div class="rounded-full bg-purple-secondary p-3">
                   <Image
                     class="max-h-11 max-w-11"
                     src={skill.logo}
-                    alt={`Logo of ${skill.name}`}/>
+                    alt={`Logo of ${skill.name}`}
+                  />
                 </div>
-                <p class="text-wrap pl-1 pr-2 font-sans text-xl">{skill.name}</p>
+                <p class="text-wrap pl-1 pr-2 font-sans text-xl">
+                  {skill.name}
+                </p>
               </div>
             ))
           }
